@@ -1,5 +1,6 @@
 import os
-import logging
+import json
+from google.oauth2 import service_account  # Asegúrate de que esta biblioteca esté instalada en tu requirements.txtimport logging
 import re
 from datetime import datetime
 from flask import Flask, request
@@ -22,7 +23,12 @@ BOT_TOKEN = os.environ['BOT_TOKEN']
 # Google Sheets (credenciales en variable GOOGLE_CREDS o archivo creds.json)
 try:
     # Intenta leer desde variable de entorno (recomendado en Render)
-    creds_dict = json.loads(os.environ['GOOGLE_CREDS'])
+   creds_json_str = os.environ.get('GOOGLE_CREDS')
+if creds_json_str:
+    creds_dict = json.loads(creds_json_str)
+    credentials = service_account.Credentials.from_service_account_info(creds_dict)
+else:
+    raise ValueError("La variable de entorno GOOGLE_CREDS no está configurada")
     creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, 
         ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'])
 except:
