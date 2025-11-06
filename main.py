@@ -3,7 +3,7 @@ import requests
 import os
 
 app = Flask(__name__)
-TOKEN = "8521848365:AAG8G68Z2R0MWg1CjlPUY2eSwpF6gCsb6fA"  # Tu token
+TOKEN = "8521848365:AAG85a5nSchzmdbLhclhbzlN7eoam-uf"  # Tu token
 WEBHOOK_PATH = "/webhook"
 
 @app.route('/')
