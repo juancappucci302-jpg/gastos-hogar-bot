@@ -5,7 +5,6 @@ import os
 app = Flask(__name__)
 TOKEN = "8521848365:AAG85a5nSchzmdbLhclhbzlN7eoam-uf"  # Tu token
 WEBHOOK_PATH = "/webhook /
-
 @app.route('/')
 def home():
     return "Bot de gastos activo 🟢"
