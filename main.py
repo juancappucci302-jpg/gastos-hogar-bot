@@ -3,7 +3,7 @@ import requests
 import os
 
 app = Flask(__name__)
-TOKEN = "8521848365:AAG85an5chzmdBhLcHbzIN7eoam-uPjodQU"  # Tu token
+TOKEN = "8551964942:AAEIBXVT6Th75E4sofD-sPUJoY1Q2ok3"  # Tu token
 WEBHOOK_PATH = "/webhook"  # ← ¡CORREGIDO! Comillas cerradas
  
 @app.route('/')
